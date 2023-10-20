@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Form from "../../ui/styled/Form";
-import FormRowVertical from "../../ui/styled/FormRowVertical";
+import FormRowVertical from "../../ui/shared/FormRowVertical";
 import Input from "../../ui/styled/Input";
 import Button from "../../ui/styled/Button";
 import SpinnerMini from "../../ui/styled/SpinnerMini";
