@@ -53,11 +53,14 @@
 - Installing react-router-dom.
 - Creating the main routing with empty pages & simple functionality.
 
-## Styling
+## Styling & Creating Features
 
-- Installing style-components react-icons.
-- Adding the golbal styles & dark mode.
-- Adding the styles for each route (adding simple logic when required).
+- Installing styled-components react-icons for styling.
+- Installing @tanstack/react-query @tanstack/react-query-devtools for query.
+- Installing react-hook-form react-hot-toast date-fns to be used alongside react-query.
+- Installing recharts for dashboard charts.
+
+- Creating the styles & Functionality of our app.
 
 - _Noting_ that the components will be structured as following:
   - _ui_ folder containing:
