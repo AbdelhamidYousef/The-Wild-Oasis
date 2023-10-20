@@ -30,13 +30,19 @@
 
 - Login. _Auth_
 - Restricted Route:
-  - Dashboard.
-  - Bookings.
-    - Bookings/:id.
-  - Guests.
-  - Cabins.
-  - Users (to register a new account). _Auth_
-  - Settings. _Auth_
+  - _Return to Login_
+  - _Root_:
+    - _Navigate to Dashboard_.
+    - Dashboard.
+    - Bookings.
+      - Bookings/:id.
+      - checkin/:id
+    - Guests.
+    - Cabins.
+    - Users (to register a new account). _Auth_
+    - Settings (for hotel's main settings).
+    - account (to change account data). _Auth_
+- Page Not Found
 
 # Phases
 
@@ -45,4 +51,4 @@
 ## Routing
 
 - Installing react-router-dom.
-- Creating the main routing with empty pages.
+- Creating the main routing with empty pages & simple functionality.
