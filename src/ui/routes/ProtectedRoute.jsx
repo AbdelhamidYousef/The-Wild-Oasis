@@ -1,9 +1,9 @@
 import { PropTypes } from "prop-types";
 import { Navigate } from "react-router-dom";
-import { useAppContext } from "../../context/AppContext";
+import { useDarkModeContext } from "../../context/DarkModeContext";
 
 const ProtectedRoute = ({ children }) => {
-  const { isAuth } = useAppContext();
+  const { isAuth } = useDarkModeContext();
 
   if (!isAuth) return <Navigate to="login" />;
   return children;

@@ -52,3 +52,17 @@
 
 - Installing react-router-dom.
 - Creating the main routing with empty pages & simple functionality.
+
+## Styling
+
+- Installing style-components react-icons.
+- Adding the golbal styles & dark mode.
+- Adding the styles for each route (adding simple logic when required).
+
+- _Noting_ that the components will be structured as following:
+  - _ui_ folder containing:
+    - _routes_ containing the main routes/pages.
+    - _layout_ containing the components for the main layout (Root, header, sidebar & footer).
+    - _general_ containing the components shared between different routes or other with logic.
+    - _styled_ containing the pure styled components.
+  - _features_ containing folder for each folder & each feature folder contain the related components.

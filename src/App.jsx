@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Login from "./ui/routes/Login";
 import ProtectedRoute from "./ui/routes/ProtectedRoute";
-import Root from "./ui/routes/Root";
+import Root from "./ui/layout/Root";
 import Dashboard from "./ui/routes/Dashboard";
 import Bookings from "./ui/routes/Bookings";
 import Booking from "./ui/routes/Booking";
@@ -13,12 +13,14 @@ import Settings from "./ui/routes/Settings";
 import Account from "./ui/routes/Account";
 import PageNotFound from "./ui/routes/PageNotFound";
 
-import { AppContextProvider } from "./context/AppContext";
+import { DarkModeContextProvider } from "./context/DarkModeContext";
 import Guests from "./ui/routes/Guests";
+import GlobalStyles from "./styles/GlobalStyles";
 
 const App = () => {
   return (
-    <AppContextProvider>
+    <DarkModeContextProvider>
+      <GlobalStyles />
       <BrowserRouter>
         <Routes>
           <Route path="login" element={<Login />} />
@@ -46,7 +48,7 @@ const App = () => {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
-    </AppContextProvider>
+    </DarkModeContextProvider>
   );
 };
 

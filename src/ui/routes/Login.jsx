@@ -1,22 +1,25 @@
-import { useNavigate } from "react-router-dom";
-import { useAppContext } from "../../context/AppContext";
+import { styled } from "styled-components";
+import Logo from "../general/Logo";
+import Heading from "../styled/Heading";
+import LoginForm from "../../features/authentication/LoginForm";
+
+const Main = styled.main`
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 48rem;
+  align-content: center;
+  justify-content: center;
+  gap: 3.2rem;
+  background-color: var(--color-grey-50);
+`;
 
 const Login = () => {
-  const { login } = useAppContext();
-  const navigate = useNavigate();
-
   return (
-    <div>
-      Login Page
-      <button
-        onClick={() => {
-          login();
-          navigate("/");
-        }}
-      >
-        Log-in
-      </button>
-    </div>
+    <Main>
+      <Logo />
+      <Heading as="h4">Log in to your account</Heading>
+      <LoginForm />
+    </Main>
   );
 };
 
