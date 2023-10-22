@@ -1,11 +1,10 @@
-import { useContext, useState, createContext, useEffect } from "react";
 import { PropTypes } from "prop-types";
-
+import { createContext, useContext, useEffect } from "react";
 import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
-const darkModeContext = createContext();
+const DarkModeContext = createContext();
 
-const DarkModeContextProvider = ({ children }) => {
+function DarkModeProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useLocalStorageState(
     window.matchMedia("(prefers-color-scheme: dark)").matches,
     "isDarkMode"
@@ -23,29 +22,24 @@ const DarkModeContextProvider = ({ children }) => {
 
   const toggleDarkMode = () => setIsDarkMode((isDark) => !isDark);
 
-  const [isAuth, setIsAuth] = useState(false);
-  const toggleAuth = () => setIsAuth((isAuth) => !isAuth);
-
   return (
-    <darkModeContext.Provider
-      value={{ isAuth, toggleAuth, isDarkMode, toggleDarkMode }}
-    >
+    <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
       {children}
-    </darkModeContext.Provider>
+    </DarkModeContext.Provider>
   );
-};
+}
 
-const useDarkModeContext = () => {
-  const context = useContext(darkModeContext);
+function useDarkMode() {
+  const context = useContext(DarkModeContext);
 
   if (!context)
-    throw new Error("useAppContext must be used within a AppContextProvider");
+    throw new Error("DarkModeContext was used outside of DarkModeProvider");
 
   return context;
-};
+}
 
-DarkModeContextProvider.propTypes = {
+DarkModeProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { DarkModeContextProvider, useDarkModeContext };
+export { DarkModeProvider, useDarkMode };

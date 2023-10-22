@@ -1,14 +1,13 @@
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
-import ButtonIcon from "../../ui/styled/ButtonIcon";
-import SpinnerMini from "../../ui/styled/SpinnerMini";
-import { useDarkModeContext } from "../../context/DarkModeContext";
+import ButtonIcon from "../../ui/ButtonIcon";
+import { useLogout } from "./useLogout";
+import SpinnerMini from "../../ui/SpinnerMini";
 
 function Logout() {
-  const { toggleAuth } = useDarkModeContext();
-  const isLoading = false;
+  const { logout, isLoading } = useLogout();
 
   return (
-    <ButtonIcon disabled={isLoading} onClick={toggleAuth}>
+    <ButtonIcon disabled={isLoading} onClick={logout}>
       {!isLoading ? <HiArrowRightOnRectangle /> : <SpinnerMini />}
     </ButtonIcon>
   );

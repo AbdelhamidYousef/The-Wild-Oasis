@@ -1,25 +1,22 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { QueryClient } from "@tanstack/query-core";
-import { QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 
-import Login from "./ui/routes/Login";
-import ProtectedRoute from "./ui/routes/ProtectedRoute";
-import Root from "./ui/layout/Root";
-import Dashboard from "./ui/routes/Dashboard";
-import Bookings from "./ui/routes/Bookings";
-import Booking from "./ui/routes/Booking";
-import Checkin from "./ui/routes/Checkin";
-import Cabins from "./ui/routes/Cabins";
-import Users from "./ui/routes/Users";
-import Settings from "./ui/routes/Settings";
-import Account from "./ui/routes/Account";
-import PageNotFound from "./ui/routes/PageNotFound";
-import Guests from "./ui/routes/Guests";
-
-import { DarkModeContextProvider } from "./context/DarkModeContext";
 import GlobalStyles from "./styles/GlobalStyles";
+import Dashboard from "./pages/Dashboard";
+import Bookings from "./pages/Bookings";
+import Cabins from "./pages/Cabins";
+import Users from "./pages/Users";
+import Settings from "./pages/Settings";
+import Account from "./pages/Account";
+import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
+import AppLayout from "./ui/AppLayout";
+import Booking from "./pages/Booking";
+import Checkin from "./pages/Checkin";
+import ProtectedRoute from "./ui/ProtectedRoute";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,9 +26,9 @@ const queryClient = new QueryClient({
   },
 });
 
-const App = () => {
+function App() {
   return (
-    <DarkModeContextProvider>
+    <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
         <GlobalStyles />
@@ -41,10 +38,9 @@ const App = () => {
             <Route path="login" element={<Login />} />
 
             <Route
-              path="/"
               element={
                 <ProtectedRoute>
-                  <Root />
+                  <AppLayout />
                 </ProtectedRoute>
               }
             >
@@ -53,7 +49,6 @@ const App = () => {
               <Route path="bookings" element={<Bookings />} />
               <Route path="bookings/:bookingId" element={<Booking />} />
               <Route path="checkin/:bookingId" element={<Checkin />} />
-              <Route path="guests" element={<Guests />} />
               <Route path="cabins" element={<Cabins />} />
               <Route path="users" element={<Users />} />
               <Route path="settings" element={<Settings />} />
@@ -85,8 +80,8 @@ const App = () => {
           }}
         />
       </QueryClientProvider>
-    </DarkModeContextProvider>
+    </DarkModeProvider>
   );
-};
+}
 
 export default App;
