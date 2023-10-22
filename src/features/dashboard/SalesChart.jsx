@@ -1,6 +1,7 @@
+import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import DashboardBox from "./DashboardBox";
-import Heading from "../../ui/Heading";
+import Heading from "../../ui/styled/Heading";
 import {
   Area,
   AreaChart,
@@ -101,5 +102,11 @@ function SalesChart({ bookings, numDays }) {
     </StyledSalesChart>
   );
 }
+
+SalesChart.propTypes = {
+  bookings: PropTypes.arrayOf(PropTypes.object).isRequired,
+  numDays: PropTypes.number.isRequired,
+  isDarkMode: PropTypes.bool,
+};
 
 export default SalesChart;

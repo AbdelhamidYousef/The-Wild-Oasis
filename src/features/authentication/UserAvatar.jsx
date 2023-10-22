@@ -10,7 +10,7 @@ const StyledUserAvatar = styled.div`
   color: var(--color-grey-600);
 `;
 
-const Avatar = styled.img`
+const Img = styled.img`
   display: block;
   width: 4rem;
   width: 3.6rem;
@@ -27,10 +27,7 @@ function UserAvatar() {
 
   return (
     <StyledUserAvatar>
-      <Avatar
-        src={avatar || "default-user.jpg"}
-        alt={`Avatar of ${fullName}`}
-      />
+      <Img src={avatar || "default-user.jpg"} alt={`Avatar of ${fullName}`} />
       <span>{fullName}</span>
     </StyledUserAvatar>
   );

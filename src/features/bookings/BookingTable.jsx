@@ -4,7 +4,7 @@ import Menus from "../../ui/Menus";
 import Empty from "../../ui/Empty";
 
 import { useBookings } from "./useBookings";
-import Spinner from "../../ui/Spinner";
+import Spinner from "../../ui/styled/Spinner";
 import Pagination from "../../ui/Pagination";
 
 function BookingTable() {

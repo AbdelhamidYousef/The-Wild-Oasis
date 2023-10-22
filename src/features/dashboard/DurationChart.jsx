@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Heading from "../../ui/Heading";
+import Heading from "../../ui/styled/Heading";
 import {
   Cell,
   Legend,

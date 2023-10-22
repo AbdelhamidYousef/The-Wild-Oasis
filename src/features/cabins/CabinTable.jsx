@@ -1,4 +1,4 @@
-import Spinner from "../../ui/Spinner";
+import Spinner from "../../ui/styled/Spinner";
 import CabinRow from "./CabinRow";
 import { useCabins } from "./useCabins";
 import Table from "../../ui/Table";

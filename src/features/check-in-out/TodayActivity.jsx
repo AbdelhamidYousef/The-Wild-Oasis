@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-import Heading from "../../ui/Heading";
+import Heading from "../../ui/styled/Heading";
 import Row from "../../ui/Row";
 
 import { useTodayActivity } from "./useTodayActivity";
-import Spinner from "../../ui/Spinner";
+import Spinner from "../../ui/styled/Spinner";
 import TodayItem from "./TodayItem";
 
 const StyledToday = styled.div`
@@ -25,7 +25,6 @@ const TodayList = styled.ul`
   overflow: scroll;
   overflow-x: hidden;
 
-  /* Removing scrollbars for webkit, firefox, and ms, respectively */
   &::-webkit-scrollbar {
     width: 0 !important;
   }
