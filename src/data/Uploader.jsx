@@ -1,9 +1,8 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { isFuture, isPast, isToday } from "date-fns";
 import supabase from "../services/supabase";
-import Button from "../ui/Button";
+// import Button from "../ui/styled/Button";
 import { subtractDates } from "../utils/helpers";
-
 import { bookings } from "./data-bookings";
 import { cabins } from "./data-cabins";
 import { guests } from "./data-guests";
@@ -94,61 +93,70 @@ async function createBookings() {
     };
   });
 
-  console.log(finalBookings);
+  // console.log(finalBookings);
 
   const { error } = await supabase.from("bookings").insert(finalBookings);
   if (error) console.log(error.message);
 }
 
-function Uploader() {
-  const [isLoading, setIsLoading] = useState(false);
+export const uploadData = async () => {
+  // await deleteGuests();
+  // await deleteCabins();
+  await deleteBookings();
+  // await createGuests();
+  // await createCabins();
+  await createBookings();
+};
 
-  async function uploadAll() {
-    setIsLoading(true);
-    // Bookings need to be deleted FIRST
-    await deleteBookings();
-    await deleteGuests();
-    await deleteCabins();
+// function Uploader() {
+//   const [isLoading, setIsLoading] = useState(false);
 
-    // Bookings need to be created LAST
-    await createGuests();
-    await createCabins();
-    await createBookings();
+//   async function uploadAll() {
+//     setIsLoading(true);
+//     // Bookings need to be deleted FIRST
+//     await deleteBookings();
+//     await deleteGuests();
+//     await deleteCabins();
 
-    setIsLoading(false);
-  }
+//     // Bookings need to be created LAST
+//     await createGuests();
+//     await createCabins();
+//     await createBookings();
 
-  async function uploadBookings() {
-    setIsLoading(true);
-    await deleteBookings();
-    await createBookings();
-    setIsLoading(false);
-  }
+//     setIsLoading(false);
+//   }
 
-  return (
-    <div
-      style={{
-        marginTop: "auto",
-        backgroundColor: "#e0e7ff",
-        padding: "8px",
-        borderRadius: "5px",
-        textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
-        gap: "8px",
-      }}
-    >
-      <h3>SAMPLE DATA</h3>
+//   async function uploadBookings() {
+//     setIsLoading(true);
+//     await deleteBookings();
+//     await createBookings();
+//     setIsLoading(false);
+//   }
 
-      <Button onClick={uploadAll} disabled={isLoading}>
-        Upload ALL
-      </Button>
+//   return (
+//     <div
+//       style={{
+//         marginTop: "auto",
+//         backgroundColor: "#e0e7ff",
+//         padding: "8px",
+//         borderRadius: "5px",
+//         textAlign: "center",
+//         display: "flex",
+//         flexDirection: "column",
+//         gap: "8px",
+//       }}
+//     >
+//       <h3>SAMPLE DATA</h3>
 
-      <Button onClick={uploadBookings} disabled={isLoading}>
-        Upload bookings ONLY
-      </Button>
-    </div>
-  );
-}
+//       <Button onClick={uploadAll} disabled={isLoading}>
+//         Upload ALL
+//       </Button>
 
-export default Uploader;
+//       <Button onClick={uploadBookings} disabled={isLoading}>
+//         Upload bookings ONLY
+//       </Button>
+//     </div>
+//   );
+// }
+
+// export default Uploader;

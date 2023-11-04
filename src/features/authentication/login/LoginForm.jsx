@@ -1,12 +1,11 @@
 import { useState } from "react";
-
 import Form from "../../../ui/styled/Form";
 import FormField from "../../../ui/styled/FormField";
 import Input from "../../../ui/styled/Input";
 import Button from "../../../ui/styled/Button";
 import SpinnerMini from "../../../ui/styled/SpinnerMini";
-
 import { useLogin } from "./useLogin";
+// import { uploadData } from "../../../data/Uploader";
 
 function LoginForm() {
   const [inputs, setInputs] = useState({
@@ -22,17 +21,9 @@ function LoginForm() {
     if (!inputs.email || !inputs.password) return;
 
     login(inputs);
-
-    // Reseting the form in case wrong email/password
-    // login(
-    //   { email, password },
-    //   {
-    //     onSettled: () => {
-    //       setEmail("");
-    //       setPassword("");
-    //     },
-    //   }
-    // );
+    // login(inputs, {
+    //   onSettled: async () => uploadData(),
+    // });
   }
 
   return (

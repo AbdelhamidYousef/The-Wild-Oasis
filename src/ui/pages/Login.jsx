@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Logo from "../shared/Logo";
 import Heading from "../styled/Heading";
 import LoginForm from "../../features/authentication/login/LoginForm";
-// import Uploader from "../../data/Uploader";
 
 const StyledLogin = styled.main`
   min-height: 100vh;
@@ -17,7 +16,6 @@ const StyledLogin = styled.main`
 function Login() {
   return (
     <StyledLogin>
-      {/* <Uploader /> */}
       <Logo />
       <Heading as="h4">Log in to your account</Heading>
       <LoginForm />
