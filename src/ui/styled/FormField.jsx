@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import styled from "styled-components";
 
 const StyledFormRow = styled.div`
@@ -16,7 +17,7 @@ const Error = styled.span`
   color: var(--color-red-700);
 `;
 
-function FormRowVertical({ label, error, children }) {
+function FormField({ label, error, children }) {
   return (
     <StyledFormRow>
       {label && <Label htmlFor={children.props.id}>{label}</Label>}
@@ -26,4 +27,10 @@ function FormRowVertical({ label, error, children }) {
   );
 }
 
-export default FormRowVertical;
+FormField.propTypes = {
+  label: PropTypes.string,
+  error: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
+export default FormField;

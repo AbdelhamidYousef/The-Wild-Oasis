@@ -8,7 +8,7 @@ import {
   HiOutlineUsers,
 } from "react-icons/hi2";
 
-const NavList = styled.ul`
+const StyledNavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -28,7 +28,7 @@ const StyledNavLink = styled(NavLink)`
     transition: all 0.3s;
   }
 
-  /* This works because react-router places the active class on the active NavLink */
+  /* NavLink active state & hover */
   &:hover,
   &:active,
   &.active:link,
@@ -56,7 +56,7 @@ const StyledNavLink = styled(NavLink)`
 function MainNav() {
   return (
     <nav>
-      <NavList>
+      <StyledNavList>
         <li>
           <StyledNavLink to="/dashboard">
             <HiOutlineHome />
@@ -87,7 +87,7 @@ function MainNav() {
             <span>Settings</span>
           </StyledNavLink>
         </li>
-      </NavList>
+      </StyledNavList>
     </nav>
   );
 }

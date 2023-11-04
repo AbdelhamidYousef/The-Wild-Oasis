@@ -1,21 +1,29 @@
 import { useState } from "react";
-import Button from "../../ui/Button";
-import Form from "../../ui/Form";
-import Input from "../../ui/Input";
-import FormRowVertical from "../../ui/FormRowVertical";
+
+import Form from "../../../ui/styled/Form";
+import FormField from "../../../ui/styled/FormField";
+import Input from "../../../ui/styled/Input";
+import Button from "../../../ui/styled/Button";
+import SpinnerMini from "../../../ui/styled/SpinnerMini";
+
 import { useLogin } from "./useLogin";
-import SpinnerMini from "../../ui/styled/SpinnerMini";
 
 function LoginForm() {
-  const [email, setEmail] = useState("guest@wildoasis.com");
-  const [password, setPassword] = useState("guest123");
+  const [inputs, setInputs] = useState({
+    email: "guest@wildoasis.com",
+    password: "guest123",
+  });
 
   const { login, isLoading } = useLogin();
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!email || !password) return;
-    login({ email, password });
+
+    if (!inputs.email || !inputs.password) return;
+
+    login(inputs);
+
+    // Reseting the form in case wrong email/password
     // login(
     //   { email, password },
     //   {
@@ -29,32 +37,33 @@ function LoginForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormRowVertical label="Email address">
+      <FormField label="Email address">
         <Input
           type="email"
           id="email"
           autoComplete="username"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={inputs.email}
+          onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
           disabled={isLoading}
         />
-      </FormRowVertical>
+      </FormField>
 
-      <FormRowVertical label="Password">
+      <FormField label="Password">
         <Input
           type="password"
           id="password"
           autoComplete="current-password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={inputs.password}
+          onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
           disabled={isLoading}
         />
-      </FormRowVertical>
-      <FormRowVertical>
+      </FormField>
+
+      <FormField>
         <Button size="large" disabled={isLoading}>
           {!isLoading ? "Log in" : <SpinnerMini />}
         </Button>
-      </FormRowVertical>
+      </FormField>
     </Form>
   );
 }

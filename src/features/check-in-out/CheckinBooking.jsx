@@ -4,7 +4,7 @@ import BookingDataBox from "../../features/bookings/BookingDataBox";
 import Row from "../../ui/Row";
 import Heading from "../../ui/styled/Heading";
 import ButtonGroup from "../../ui/ButtonGroup";
-import Button from "../../ui/Button";
+import Button from "../../ui/styled/Button";
 import ButtonText from "../../ui/ButtonText";
 import Spinner from "../../ui/styled/Spinner";
 

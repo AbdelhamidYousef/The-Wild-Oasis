@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Logo from "../general/Logo";
+import Logo from "../shared/Logo";
 import Heading from "../styled/Heading";
-import LoginForm from "../../features/authentication/LoginForm";
+import LoginForm from "../../features/authentication/login/LoginForm";
 // import Uploader from "../../data/Uploader";
 
-const LoginLayout = styled.main`
+const StyledLogin = styled.main`
   min-height: 100vh;
   display: grid;
   grid-template-columns: 48rem;
@@ -16,12 +16,12 @@ const LoginLayout = styled.main`
 
 function Login() {
   return (
-    <LoginLayout>
+    <StyledLogin>
       {/* <Uploader /> */}
       <Logo />
       <Heading as="h4">Log in to your account</Heading>
       <LoginForm />
-    </LoginLayout>
+    </StyledLogin>
   );
 }
 

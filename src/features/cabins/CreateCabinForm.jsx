@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 
-import Input from "../../ui/Input";
-import Form from "../../ui/Form";
-import Button from "../../ui/Button";
+import Input from "../../ui/styled/Input";
+import Form from "../../ui/styled/Form";
+import Button from "../../ui/styled/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";

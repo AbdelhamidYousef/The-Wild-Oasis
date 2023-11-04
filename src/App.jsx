@@ -17,7 +17,7 @@ import PageNotFound from "./ui/pages/PageNotFound";
 import AppLayout from "./ui/layout/AppLayout";
 import Booking from "./ui/pages/Booking";
 import Checkin from "./ui/pages/Checkin";
-import ProtectedRoute from "./ui/general/ProtectedRoute";
+import ProtectedRoute from "./features/authentication/user/ProtectedRoute";
 
 const queryClient = new QueryClient({
   defaultOptions: {

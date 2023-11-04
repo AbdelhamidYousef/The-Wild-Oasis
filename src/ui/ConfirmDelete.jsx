@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "./Button";
+import Button from "./styled/Button";
 import Heading from "./styled/Heading";
 
 const StyledConfirmDelete = styled.div`
