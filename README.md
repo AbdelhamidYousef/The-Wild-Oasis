@@ -11,7 +11,7 @@ This is a demo of web application for a hotel management system, built with Reac
 - Styled Components
 - Vite
 - EsLint
-- Other Libraries
+- Other Libraries:
   - React Hook Form
   - React Hot Toast
   - React Icons

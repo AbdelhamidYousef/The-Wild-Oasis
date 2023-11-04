@@ -123,6 +123,18 @@ body {
   font-size: 1.6rem;
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+  &-thumb {
+    background-color: var(--color-brand-500);
+    &:hover {
+      background-color: var(--color-brand-600);
+    }
+  }
+}
+
+
 input,
 button,
 textarea,
