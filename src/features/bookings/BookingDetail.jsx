@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import BookingDataBox from "./BookingDataBox";
-import Row from "../../ui/Row";
+import Flex from "../../ui/styled/Flex";
 import Heading from "../../ui/styled/Heading";
 import Tag from "../../ui/Tag";
 import ButtonGroup from "../../ui/ButtonGroup";
@@ -46,13 +46,13 @@ function BookingDetail() {
 
   return (
     <>
-      <Row type="horizontal">
+      <Flex type="horizontal">
         <HeadingGroup>
           <Heading as="h1">Booking #{bookingId}</Heading>
           <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
         </HeadingGroup>
         <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
-      </Row>
+      </Flex>
 
       <BookingDataBox booking={booking} />
 

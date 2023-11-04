@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import Button from "../../ui/styled/Button";
 import Form from "../../ui/styled/Form";
-import FormRow from "../../ui/FormRow";
+import FormRow from "../../ui/styled/FormRow";
 import Input from "../../ui/styled/Input";
 import { useSignup } from "./useSignup";
 

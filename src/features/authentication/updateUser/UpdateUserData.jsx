@@ -1,23 +1,21 @@
 import { useState } from "react";
+import Form from "../../../ui/styled/Form";
+import FormRow from "../../../ui/styled/FormRow";
+import Input from "../../../ui/styled/Input";
+import FileInput from "../../../ui/styled/FileInput";
+import Button from "../../../ui/styled/Button";
 
-import Button from "../../ui/styled/Button";
-import FileInput from "../../ui/FileInput";
-import Form from "../../ui/styled/Form";
-import FormRow from "../../ui/FormRow";
-import Input from "../../ui/styled/Input";
-
-import { useUser } from "./user/useUser";
+import { useUser } from "../user/useUser";
 import { useUpdateUser } from "./useUpdateUser";
 
-function UpdateUserDataForm() {
-  // We don't need the loading state, and can immediately use the user data, because we know that it has already been loaded at this point
+function UpdateUserData() {
+  // No loading status because the user data is already loaded
   const {
     user: {
       email,
       user_metadata: { fullName: currentFullName },
     },
   } = useUser();
-
   const { updateUser, isUpdating } = useUpdateUser();
 
   const [fullName, setFullName] = useState(currentFullName);
@@ -82,4 +80,4 @@ function UpdateUserDataForm() {
   );
 }
 
-export default UpdateUserDataForm;
+export default UpdateUserData;

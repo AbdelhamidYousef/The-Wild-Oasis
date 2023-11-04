@@ -74,7 +74,7 @@ function CabinRow({ cabin }) {
   }
 
   return (
-    <Table.Row>
+    <Table.Flex>
       <Img src={image} />
       <Cabin>{name}</Cabin>
       <div>Fits up to {maxCapacity} guests</div>
@@ -113,7 +113,7 @@ function CabinRow({ cabin }) {
           </Modal.Window>
         </Modal>
       </div>
-    </Table.Row>
+    </Table.Flex>
   );
 }
 

@@ -1,13 +1,13 @@
 import { useForm } from "react-hook-form";
-import Button from "../../ui/styled/Button";
-import Form from "../../ui/styled/Form";
-import FormRow from "../../ui/FormRow";
-import Input from "../../ui/styled/Input";
+import Form from "../../../ui/styled/Form";
+import FormRow from "../../../ui/styled/FormRow";
+import Input from "../../../ui/styled/Input";
+import Button from "../../../ui/styled/Button";
 
 import { useUpdateUser } from "./useUpdateUser";
 
-function UpdatePasswordForm() {
-  const { register, handleSubmit, formState, getValues, reset } = useForm();
+function UpdatePassword() {
+  const { register, getValues, formState, handleSubmit, reset } = useForm();
   const { errors } = formState;
 
   const { updateUser, isUpdating } = useUpdateUser();
@@ -63,4 +63,4 @@ function UpdatePasswordForm() {
   );
 }
 
-export default UpdatePasswordForm;
+export default UpdatePassword;

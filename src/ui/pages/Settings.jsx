@@ -1,13 +1,13 @@
 import UpdateSettingsForm from "../../features/settings/UpdateSettingsForm";
 import Heading from "../styled/Heading";
-import Row from "../Row";
+import Flex from "../styled/Flex";
 
 function Settings() {
   return (
-    <Row>
+    <Flex type="vertical">
       <Heading as="h1">Update hotel settings</Heading>
       <UpdateSettingsForm />
-    </Row>
+    </Flex>
   );
 }
 

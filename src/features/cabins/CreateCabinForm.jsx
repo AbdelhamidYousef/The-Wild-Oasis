@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 import Input from "../../ui/styled/Input";
 import Form from "../../ui/styled/Form";
 import Button from "../../ui/styled/Button";
-import FileInput from "../../ui/FileInput";
+import FileInput from "../../ui/styled/FileInput";
 import Textarea from "../../ui/Textarea";
-import FormRow from "../../ui/FormRow";
+import FormRow from "../../ui/styled/FormRow";
 
 import { useCreateCabin } from "./useCreateCabin";
 import { useEditCabin } from "./useEditCabin";

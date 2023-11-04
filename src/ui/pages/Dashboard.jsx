@@ -1,15 +1,15 @@
 import DashboardLayout from "../../features/dashboard/DashboardLayout";
 import DashboardFilter from "../../features/dashboard/DashboardFilter";
 import Heading from "../styled/Heading";
-import Row from "../Row";
+import Flex from "../styled/Flex";
 
 function Dashboard() {
   return (
     <>
-      <Row type="horizontal">
+      <Flex type="horizontal">
         <Heading as="h1">Dashboard</Heading>
         <DashboardFilter />
-      </Row>
+      </Flex>
 
       <DashboardLayout />
     </>

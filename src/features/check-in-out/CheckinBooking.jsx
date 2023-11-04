@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import BookingDataBox from "../../features/bookings/BookingDataBox";
 
-import Row from "../../ui/Row";
+import Flex from "../../ui/styled/Flex";
 import Heading from "../../ui/styled/Heading";
 import ButtonGroup from "../../ui/ButtonGroup";
 import Button from "../../ui/styled/Button";
@@ -68,10 +68,10 @@ function CheckinBooking() {
 
   return (
     <>
-      <Row type="horizontal">
+      <Flex type="horizontal">
         <Heading as="h1">Check in booking #{bookingId}</Heading>
         <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
-      </Row>
+      </Flex>
 
       <BookingDataBox booking={booking} />
 

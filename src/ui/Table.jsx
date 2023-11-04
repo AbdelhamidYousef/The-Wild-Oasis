@@ -78,7 +78,7 @@ function Header({ children }) {
     </StyledHeader>
   );
 }
-function Row({ children }) {
+function Flex({ children }) {
   const { columns } = useContext(TableContext);
   return (
     <StyledRow role="row" columns={columns}>
@@ -95,7 +95,7 @@ function Body({ data, render }) {
 
 Table.Header = Header;
 Table.Body = Body;
-Table.Row = Row;
+Table.Flex = Flex;
 Table.Footer = Footer;
 
 export default Table;

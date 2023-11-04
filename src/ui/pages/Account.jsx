@@ -1,22 +1,22 @@
-import UpdatePasswordForm from "../../features/authentication/UpdatePasswordForm";
-import UpdateUserDataForm from "../../features/authentication/UpdateUserDataForm";
 import Heading from "../styled/Heading";
-import Row from "../Row";
+import Flex from "../styled/Flex";
+import UpdateUserData from "../../features/authentication/updateUser/UpdateUserData";
+import UpdatePassword from "../../features/authentication/updateUser/UpdatePassword";
 
 function Account() {
   return (
     <>
       <Heading as="h1">Update your account</Heading>
 
-      <Row>
+      <Flex type="vertical">
         <Heading as="h3">Update user data</Heading>
-        <UpdateUserDataForm />
-      </Row>
+        <UpdateUserData />
+      </Flex>
 
-      <Row>
+      <Flex type="vertical">
         <Heading as="h3">Update password</Heading>
-        <UpdatePasswordForm />
-      </Row>
+        <UpdatePassword />
+      </Flex>
     </>
   );
 }

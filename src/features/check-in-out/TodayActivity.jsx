@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import Heading from "../../ui/styled/Heading";
-import Row from "../../ui/Row";
+import Flex from "../../ui/styled/Flex";
 
 import { useTodayActivity } from "./useTodayActivity";
 import Spinner from "../../ui/styled/Spinner";
@@ -44,9 +44,9 @@ function TodayActivity() {
 
   return (
     <StyledToday>
-      <Row type="horizontal">
+      <Flex type="horizontal">
         <Heading as="h2">Today</Heading>
-      </Row>
+      </Flex>
 
       {!isLoading ? (
         activities?.length > 0 ? (

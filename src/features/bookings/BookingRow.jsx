@@ -71,7 +71,7 @@ function BookingRow({
   };
 
   return (
-    <Table.Row>
+    <Table.Flex>
       <Cabin>{cabinName}</Cabin>
 
       <Stacked>
@@ -140,7 +140,7 @@ function BookingRow({
           />
         </Modal.Window>
       </Modal>
-    </Table.Row>
+    </Table.Flex>
   );
 }
 
