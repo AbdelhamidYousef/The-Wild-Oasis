@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import { useSearchParams } from "react-router-dom";
 import Select from "./Select";
 
@@ -19,5 +20,9 @@ function SortBy({ options }) {
     />
   );
 }
+
+SortBy.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default SortBy;

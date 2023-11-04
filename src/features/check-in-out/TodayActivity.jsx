@@ -44,7 +44,7 @@ function TodayActivity() {
 
   return (
     <StyledToday>
-      <Flex type="horizontal">
+      <Flex>
         <Heading as="h2">Today</Heading>
       </Flex>
 

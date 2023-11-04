@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import { createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiEllipsisVertical } from "react-icons/hi2";
@@ -119,7 +120,7 @@ function List({ id, children }) {
   );
 }
 
-function Button({ children, icon, onClick }) {
+function Button({ icon, onClick, children }) {
   const { close } = useContext(MenusContext);
 
   function handleClick() {
@@ -141,5 +142,21 @@ Menus.Menu = Menu;
 Menus.Toggle = Toggle;
 Menus.List = List;
 Menus.Button = Button;
+
+Menus.propTypes = {
+  children: PropTypes.node,
+};
+Toggle.propTypes = {
+  id: PropTypes.number,
+};
+List.propTypes = {
+  id: PropTypes.number,
+  children: PropTypes.node,
+};
+Button.propTypes = {
+  icon: PropTypes.node,
+  onClick: PropTypes.func,
+  children: PropTypes.node,
+};
 
 export default Menus;

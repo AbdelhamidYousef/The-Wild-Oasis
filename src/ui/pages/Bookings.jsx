@@ -6,7 +6,7 @@ import BookingTableOperations from "../../features/bookings/BookingTableOperatio
 function Bookings() {
   return (
     <>
-      <Flex type="horizontal">
+      <Flex>
         <Heading as="h1">All bookings</Heading>
         <BookingTableOperations />
       </Flex>

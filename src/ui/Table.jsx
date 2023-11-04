@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import { createContext, useContext } from "react";
 import styled from "styled-components";
 
@@ -86,7 +87,6 @@ function Flex({ children }) {
     </StyledRow>
   );
 }
-
 function Body({ data, render }) {
   if (!data.length) return <Empty>No data to show at the moment</Empty>;
 
@@ -97,5 +97,20 @@ Table.Header = Header;
 Table.Body = Body;
 Table.Flex = Flex;
 Table.Footer = Footer;
+
+Table.propTypes = {
+  columns: PropTypes.string,
+  children: PropTypes.node,
+};
+Header.propTypes = {
+  children: PropTypes.node,
+};
+Flex.propTypes = {
+  children: PropTypes.node,
+};
+Body.propTypes = {
+  data: PropTypes.array,
+  render: PropTypes.func,
+};
 
 export default Table;

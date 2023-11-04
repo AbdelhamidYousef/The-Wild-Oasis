@@ -1,10 +1,10 @@
 import Spinner from "../../ui/styled/Spinner";
+import Empty from "../../ui/shared/Empty";
+import Menus from "../../ui/Menus";
+import Table from "../../ui/Table";
 import CabinRow from "./CabinRow";
 import { useCabins } from "./useCabins";
-import Table from "../../ui/Table";
-import Menus from "../../ui/Menus";
 import { useSearchParams } from "react-router-dom";
-import Empty from "../../ui/Empty";
 
 function CabinTable() {
   const { isLoading, cabins } = useCabins();
@@ -44,8 +44,6 @@ function CabinTable() {
         </Table.Header>
 
         <Table.Body
-          // data={cabins}
-          // data={filteredCabins}
           data={sortedCabins}
           render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
         />

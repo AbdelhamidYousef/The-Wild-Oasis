@@ -17,4 +17,8 @@ const Flex = styled.div`
   ${(props) => types[props.type]}
 `;
 
+Flex.defaultProps = {
+  type: "horizontal",
+};
+
 export default Flex;

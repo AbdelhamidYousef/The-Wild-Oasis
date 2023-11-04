@@ -17,7 +17,7 @@ import { useCheckout } from "../check-in-out/useCheckout";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import { useDeleteBooking } from "./useDeleteBooking";
-import Empty from "../../ui/Empty";
+import Empty from "../../ui/shared/Empty";
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -46,7 +46,7 @@ function BookingDetail() {
 
   return (
     <>
-      <Flex type="horizontal">
+      <Flex>
         <HeadingGroup>
           <Heading as="h1">Booking #{bookingId}</Heading>
           <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>

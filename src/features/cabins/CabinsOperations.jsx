@@ -1,8 +1,8 @@
-import TableOperations from "../../ui/TableOperations";
+import TableOperations from "../../ui/styled/TableOperations";
 import Filter from "../../ui/shared/Filter";
-import SortBy from "../../ui/SortBy";
+import SortBy from "../../ui/shared/SortBy";
 
-function CabinTableOperations() {
+function CabinsOperations() {
   return (
     <TableOperations>
       <Filter
@@ -28,4 +28,4 @@ function CabinTableOperations() {
   );
 }
 
-export default CabinTableOperations;
+export default CabinsOperations;

@@ -6,7 +6,7 @@ import Flex from "../styled/Flex";
 function Dashboard() {
   return (
     <>
-      <Flex type="horizontal">
+      <Flex>
         <Heading as="h1">Dashboard</Heading>
         <DashboardFilter />
       </Flex>

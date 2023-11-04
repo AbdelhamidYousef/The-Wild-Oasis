@@ -1,15 +1,15 @@
-import CabinTable from "../../features/cabins/CabinTable";
-import Heading from "../styled/Heading";
 import Flex from "../styled/Flex";
+import Heading from "../styled/Heading";
+import CabinsOperations from "../../features/cabins/CabinsOperations";
+import CabinTable from "../../features/cabins/CabinTable";
 import AddCabin from "../../features/cabins/AddCabin";
-import CabinTableOperations from "../../features/cabins/CabinTableOperations";
 
 function Cabins() {
   return (
     <>
-      <Flex type="horizontal">
+      <Flex>
         <Heading as="h1">All cabins</Heading>
-        <CabinTableOperations />
+        <CabinsOperations />
       </Flex>
 
       <Flex type="vertical">
