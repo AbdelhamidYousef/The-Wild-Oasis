@@ -17,8 +17,6 @@ function UpdateSettingsForm() {
   } = useSettings();
   const { isUpdating, updateSetting } = useUpdateSetting();
 
-  if (isLoading) return <Spinner />;
-
   function handleUpdate(e, field) {
     const { value } = e.target;
 
@@ -26,6 +24,7 @@ function UpdateSettingsForm() {
     updateSetting({ [field]: value });
   }
 
+  if (isLoading) return <Spinner />;
   return (
     <Form>
       <FormRow label="Minimum nights/booking">
