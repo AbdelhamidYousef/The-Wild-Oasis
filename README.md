@@ -2,26 +2,20 @@
 
 This is a demo of web application for a hotel management system, built with React, React Router, Redux Toolkit, Tailwindcss, Vite, and EsLint.
 
-**Table of Contents**
-
-- Technologies used
-- To run the website locally
-- To deploy the website to production
-- Live Demo
-- Contact me
-
 **Technologies used:**
 
 - React
 - React Router
-- Redux Toolkit
-- Tailwindcss
+- React Query
+- Supabase
+- Styled Components
 - Vite
 - EsLint
+- Other Libraries (React Hook Form, React Hot Toast & React Icons)
 
 **Live Demo:**
 
-- [Here](https://wildoasis.netlify.app/)
+- [Here](https://wildoasis99.netlify.app/)
 
 **Contact me:**
 
