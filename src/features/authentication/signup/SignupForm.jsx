@@ -1,13 +1,13 @@
 import { useForm } from "react-hook-form";
-import Button from "../../ui/styled/Button";
-import Form from "../../ui/styled/Form";
-import FormRow from "../../ui/styled/FormRow";
-import Input from "../../ui/styled/Input";
+import Form from "../../../ui/styled/Form";
+import FormRow from "../../../ui/styled/FormRow";
+import Input from "../../../ui/styled/Input";
+import Button from "../../../ui/styled/Button";
 import { useSignup } from "./useSignup";
 
 function SignupForm() {
   const { signup, isLoading } = useSignup();
-  const { register, formState, getValues, handleSubmit, reset } = useForm();
+  const { register, getValues, formState, handleSubmit, reset } = useForm();
   const { errors } = formState;
 
   function onSubmit({ fullName, email, password }) {
