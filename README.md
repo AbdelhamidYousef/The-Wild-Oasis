@@ -1,4 +1,4 @@
-# PizzaSclice
+# Wild Oasis
 
 This is a demo of web application for a hotel management system, built with React, React Router, Redux Toolkit, Tailwindcss, Vite, and EsLint.
 
